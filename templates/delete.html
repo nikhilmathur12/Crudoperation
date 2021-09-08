@@ -1,0 +1,9 @@
+{%extends 'base.html'%}
+{%block content%}
+<p>Are you want to delete"{{item}}"?</p>
+<form action="{%url 'delete' item.id%}" method="post">
+    {%csrf_token%}
+    <a href="{%url 'home'%}">Cancel</a>
+    <button type="submit" value="Submit">Confirm</button>
+</form>
+{%endblock%}
